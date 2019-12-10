@@ -1,4 +1,6 @@
-
+*.pdf
+BUPTthesis.cls
+.DS_Store
 # Created by https://www.gitignore.io/api/latex,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=latex,visualstudiocode
 
