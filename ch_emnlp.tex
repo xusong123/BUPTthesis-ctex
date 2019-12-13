@@ -1,0 +1,20 @@
+\chapter{基于全局表示的局部特征提取在神经文本分类中的应用}
+
+\section{引言}
+在文本分类任务中，有一种非常主流的方法。该方法首先利用显式的局部抽取器来识别关键的局部特征，然后再根据这个识别好的特征进行分类，我们将这一研究领域称为``局部特征驱动模型''。
+
+\begin{table}[p]
+  \begin{center}
+    \begin{tabular}{c c}
+    \toprule
+    % Case1: \emph{\textbf{Apple} is amazing extremely in taking photos.}\\
+    示例1: \emph{\textbf{苹果}太棒了! 我已经受够了我的相机了。}\\
+	% Case2: ``\emph{People store \textbf{apples} in root cellar during the winter for their own use or for sale.}"\\
+	% Case2: ``\emph{All fifteen of the Bayfield \textbf{Apple} Company products are made at our orchard.}"\\
+	示例2: \emph{\textbf{苹果}享誉世界，并且值得被称为 ``营养宝仓''.}\\
+    \bottomrule
+    \end{tabular}
+  \end{center}
+  \caption{主题分类中的\emph{科技}和\emph{健康}, \emph{\textbf{苹果}} 的意思在局部文本中难以被正确的区分。}
+\label{tab: case}
+\end{table}
