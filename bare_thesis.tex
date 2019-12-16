@@ -17,6 +17,23 @@
 \documentclass[chapterbib,xits,gls]{BUPTthesis}
 \addbibresource{bare_thesis.bib}
 
+\usepackage{url}
+\usepackage{color}
+\usepackage{transparent}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{booktabs}
+% \usepackage{ulem}
+\usepackage[normalem]{ulem}
+% \usepackage{ulem}
+\graphicspath{ {images/} }
+
+
 \input{metadata}
 \loadglsentries{acronyms}
 
@@ -37,11 +54,11 @@
 \include{ch_emnlp}
 
 
-\mainbib
+% \mainbib
 
-\appendix
-\include{app_abbreviation}
-\include{app_lhospital}
+% \appendix
+% \include{app_abbreviation}
+% \include{app_lhospital}
 \backmatter
 \nottoggle{review}{\include{thanks}}{}
 % %% 在读期间论文发表情况

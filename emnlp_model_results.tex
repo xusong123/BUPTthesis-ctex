@@ -1,0 +1,50 @@
+\begin{table*}[ht]
+% \begin{small}
+  \begin{center}
+  \scalebox{0.9}{
+    \begin{tabular}{lcccccccc}
+      \toprule
+      模型 & Yelp P. & Yelp F. & Amz. P. & Amz. F. & AG & Sogou & Yah. A. & DBP \\
+      \midrule
+      bigram-FastText \citep{joulin2016bag}   & 95.7 & 63.9 & 94.6 & 60.2 & 92.5 & 96.8 & 72.3 & 98.6 \\
+      Region-emb \citep{qiao2018anew}   & 96.2 & 64.5 & 95.3 & 60.8 & 92.8 & \underline{97.3} & 73.4 & \underline{98.9} \\
+      \midrule
+      SANet(big) \citep{letarte2018importance}   & 95.2 & 64.0 & 95.5 & 61.3 & 92.6 & -    & 74.1 & 98.8 \\
+      \midrule
+      LSTM  \citep{zhang2015character}    & 94.7 & 58.2 &  93.9 & 59.4  &  86.1  & 95.2 & 70.8 & 98.6 \\
+      D-LSTM  \citep{yogatama2017generative}    & 92.6 & 59.6 & -    & -    & 92.1 & 94.9 & 73.7 & 98.7 \\
+
+      \midrule
+      char-CNN \citep{zhang2015character}  & 94.7 & 62.0 & 94.5 & 59.6 & 87.2 & 95.1 & 71.2 & 98.3 \\
+      % char-CRNN \citep{cho2014learning}    & 94.5 & 61.8 & 94.1 & 59.2 & 91.4 & 95.2 & 71.7 & 98.6 \\
+      VDCNN \citep{conneau2016very}     & 95.7 & 64.7 & \underline{95.7} & \underline{63.0} & 91.3 & 96.8 & 73.4 & 98.7 \\
+      \midrule
+      \midrule
+
+      CNN \citep{kim2014convolutional}    & 95.8 & 64.7 & 95.2 & 60.9 & 91.9 & 97.1 & 72.6 & 98.8 \\
+      \emph{Encoder1}-CNN-S (Ours)     & 96.5 & 66.2 & 95.9 & \textbf{63.3} &  92.5  & \textbf{97.5} & 74.5 & 98.8 \\
+      \emph{Encoder1}-CNN-A (Ours)   & 96.5 & 66.5 & \textbf{96.0} & \textbf{63.3} &  93.0  & \textbf{97.5} & 74.6 & 98.9 \\
+      \midrule
+
+      DRNN  \citep{wang2018disconnected}      & \underline{96.3} & \underline{66.4} & {95.6} & \underline{63.0} & \underline{92.9} & 96.9 & \underline{74.3} & \underline{98.9} \\
+      \emph{Encoder1}-DRNN-S (Ours)    & 96.6 & 66.8 & \textbf{96.0} & 63.2 & 93.0 & 97.2 & 74.8 & \textbf{99.0} \\
+      \emph{Encoder1}-DRNN-A (Ours)      & \textbf{96.7} & \textbf{67.0}  & \textbf{96.0} & 63.1 & \textbf{93.2}  & 97.3 & \textbf{75.0} & \textbf{99.0} \\
+     \bottomrule
+    \end{tabular}
+    }
+  \end{center}
+    \caption{各数据集中测试集准确率[\%]。
+    % Baseline models are CNN \citep{kim2014convolutional} and DRNN \citep{wang2018disconnected}, which are chosen as encoder2 in our architecture.
+    我们使用Encoder1-Encoder2-Mode来代表我们的结构，其中``S''代表``SAME''而``A''代表``ATTEND''模式。
+    % We only list the best performance of specific Encoder2 in SAME and ATTEND mode respectively. 
+    % For example, we report the best results in row Encoder1-CNN-S where Encoder2 is CNN \citep{kim2014convolutional} and Interaction Mode is SAME with different Encoder1.
+    对于某一种Encoder2，我们测试了三种不同的Encoder1。
+    % For the sake of brevity, we only list the best performance here.
+    为了简介, \emph{Encoder1}这里代表了这三种不同的Encoder1模型中最佳的结果，而不是某一种Encoder1。
+    % We list the best performance of three Encoder1 for specific Encoder2 and Interaction Mode.
+    % Detailed experiments results for all combinations of Encoder1-Encoder2-Mode are reported in supplementary materials. 
+    至于用来对比的模型, 第一块列举了基于n-grams的模型，包括bigram-FastText \citep{joulin2016bag}和region embedding \citep{qiao2018anew}. 自注意力网络SANet \citep{letarte2018importance}放在第二块中.
+    基于RNN的模型LSTM \citep{zhang2015character}, D-LSTM  \citep{yogatama2017generative}和基于CNN的模型char-CNN \citep{zhang2015character} 和VDCNN \citep{conneau2016very}列在第三和第四块中。 强力的局部特征提取模型CNN \citep{kim2014convolutional} 和DRNN \citep{wang2018disconnected} 作为基线模型被列在最后两块，且被拿来直接和我们的模型对比。}
+  \label{tab:results}
+% \end{small}
+\end{table*}
